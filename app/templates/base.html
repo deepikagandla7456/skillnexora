@@ -25,32 +25,32 @@
 <!-- SIDEBAR -->
 <div class="sidebar {% if current_user.is_demo %}sidebar-with-banner{% endif %}" id="sidebar">
   <div class="sidebar-logo">
-    <a href="{{ url_for('main.dashboard') }}">EcoNexora 🌿</a>
+    <a href="{{ url_for('main.dashboard') }}" aria-label="EcoNexora Home Dashboard">EcoNexora 🌿</a>
   </div>
   <nav class="sidebar-nav">
-    <a href="{{ url_for('main.dashboard') }}" class="nav-item {% if request.endpoint == 'main.dashboard' %}active{% endif %}">
+    <a href="{{ url_for('main.dashboard') }}" class="nav-item {% if request.endpoint == 'main.dashboard' %}active{% endif %}" aria-label="Go to Home Dashboard">
       <i class="fa fa-home"></i> <span>Home</span>
     </a>
-    <a href="{{ url_for('learning.learn') }}" class="nav-item {% if request.endpoint == 'learning.learn' %}active{% endif %}">
+    <a href="{{ url_for('learning.learn') }}" class="nav-item {% if request.endpoint == 'learning.learn' %}active{% endif %}" aria-label="Go to Track Carbon Impact">
       <i class="fa fa-leaf"></i> <span>Track Carbon Impact</span>
     </a>
-    <a href="{{ url_for('post.generate') }}" class="nav-item {% if request.endpoint == 'post.generate' %}active{% endif %}">
+    <a href="{{ url_for('post.generate') }}" class="nav-item {% if request.endpoint == 'post.generate' %}active{% endif %}" aria-label="Go to Generate Eco Posts">
       <i class="fa fa-pen-nib"></i> <span>Generate Eco Posts</span>
     </a>
-    <a href="{{ url_for('outreach.cold_outreach') }}" class="nav-item {% if request.endpoint == 'outreach.cold_outreach' %}active{% endif %}">
+    <a href="{{ url_for('outreach.cold_outreach') }}" class="nav-item {% if request.endpoint == 'outreach.cold_outreach' %}active{% endif %}" aria-label="Go to Climate Outreach">
       <i class="fa fa-envelope"></i> <span>Climate Outreach</span>
     </a>
-    <a href="{{ url_for('streak.streak_page') }}" class="nav-item {% if request.endpoint == 'streak.streak_page' %}active{% endif %}">
+    <a href="{{ url_for('streak.streak_page') }}" class="nav-item {% if request.endpoint == 'streak.streak_page' %}active{% endif %}" aria-label="Go to Eco-Streak and Badges Wall">
       <i class="fa fa-fire"></i> <span>Eco-Streak & Badges</span>
     </a>
   </nav>
   <div class="sidebar-bottom">
     {% if current_user.is_demo %}
-      <a href="{{ url_for('auth.signup') }}" class="nav-item signup-item">
+      <a href="{{ url_for('auth.signup') }}" class="nav-item signup-item" aria-label="Create a Free Account">
         <i class="fa fa-user-plus"></i> <span>Create Account</span>
       </a>
     {% else %}
-      <a href="{{ url_for('auth.logout') }}" class="nav-item logout-item">
+      <a href="{{ url_for('auth.logout') }}" class="nav-item logout-item" aria-label="Logout of application">
         <i class="fa fa-right-from-bracket"></i> <span>Logout</span>
       </a>
     {% endif %}
@@ -60,7 +60,7 @@
 
 <!-- MOBILE TOP BAR -->
 <div class="mobile-topbar {% if current_user.is_demo %}topbar-with-banner{% endif %}">
-  <button class="hamburger" onclick="openSidebar()"><i class="fa fa-bars"></i></button>
+  <button class="hamburger" onclick="openSidebar()" aria-label="Open Navigation Menu"><i class="fa fa-bars"></i></button>
   <span class="mobile-logo">EcoNexora 🌿</span>
 </div>
 {% endif %}
@@ -83,28 +83,28 @@
     <div class="footer-inner">
       <div class="footer-col">
         <div class="footer-social">
-          <a href="https://github.com/deepikagandla7456" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/deepika-gandla" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://github.com/deepikagandla7456" target="_blank" aria-label="GitHub Profile Link"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/deepika-gandla" target="_blank" aria-label="LinkedIn Profile Link"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com" target="_blank" aria-label="Twitter Profile Link"><i class="fab fa-x-twitter"></i></a>
         </div>
       </div>
       <div class="footer-col">
         <h4>EXPLORE</h4>
-        <a href="{{ url_for('learning.learn') if current_user.is_authenticated else url_for('auth.signup') }}">Track Carbon Impact</a>
-        <a href="{{ url_for('post.generate') if current_user.is_authenticated else url_for('auth.signup') }}">Generate Eco Posts</a>
-        <a href="{{ url_for('outreach.cold_outreach') if current_user.is_authenticated else url_for('auth.signup') }}">Climate Outreach</a>
-        <a href="{{ url_for('streak.streak_page') if current_user.is_authenticated else url_for('auth.signup') }}">Eco-Streak & Badges</a>
+        <a href="{{ url_for('learning.learn') if current_user.is_authenticated else url_for('auth.signup') }}" aria-label="Explore Track Carbon Impact page">Track Carbon Impact</a>
+        <a href="{{ url_for('post.generate') if current_user.is_authenticated else url_for('auth.signup') }}" aria-label="Explore Generate Eco Posts page">Generate Eco Posts</a>
+        <a href="{{ url_for('outreach.cold_outreach') if current_user.is_authenticated else url_for('auth.signup') }}" aria-label="Explore Climate Outreach page">Climate Outreach</a>
+        <a href="{{ url_for('streak.streak_page') if current_user.is_authenticated else url_for('auth.signup') }}" aria-label="Explore Eco-Streak and Badges page">Eco-Streak & Badges</a>
       </div>
       <div class="footer-col">
         <h4>RESOURCES</h4>
-        <a href="https://github.com/deepikagandla7456/skillnexora" target="_blank">GitHub Repo</a>
-        <a href="https://console.groq.com" target="_blank">Get Groq API Key</a>
-        <a href="https://ourworldindata.org/co2-emissions" target="_blank">CO2 Footprint Data</a>
+        <a href="https://github.com/deepikagandla7456/skillnexora" target="_blank" aria-label="View Project Code on GitHub">GitHub Repo</a>
+        <a href="https://console.groq.com" target="_blank" aria-label="Get Groq API Key Console">Get Groq API Key</a>
+        <a href="https://ourworldindata.org/co2-emissions" target="_blank" aria-label="Learn about CO2 Footprint Data">CO2 Footprint Data</a>
       </div>
       <div class="footer-col">
         <h4>LEGAL</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#" aria-label="View Privacy Policy">Privacy Policy</a>
+        <a href="#" aria-label="View Terms of Service">Terms of Service</a>
       </div>
       <div class="footer-col">
         <h4>BUILT BY</h4>
@@ -118,7 +118,7 @@
 </div>
 
 <!-- SCROLL TO TOP -->
-<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll back to top of page">
   <i class="fa fa-chevron-up"></i>
 </button>
 
